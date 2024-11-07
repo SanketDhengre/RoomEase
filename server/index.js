@@ -22,20 +22,12 @@ app.use("/users", userRoutes)
 
 /* MONGOOSE SETUP */
 const PORT = 3001;
-// mongoose
-//   .connect(process.env.MONGO_URL, {
-//     dbName: "RoomsBnB",
-//   })
-//   .then(() => {
-//     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-//   })
-//   .catch((err) => console.log(`${err} did not connect`));
 
 app.listen(PORT, async () => {
   try {
     await connect();
     console.log("mongodb cconnected");
-    console.log("listening on port 3001")
+    console.log("listening on port 3001");
 
   } catch (error) {
     console.log(error.message);
