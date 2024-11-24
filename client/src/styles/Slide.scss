@@ -1,0 +1,133 @@
+// .slide {
+//   width: 100vw;
+//   height: 90vh;
+//   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+//     url("../../public/assets/slide.jpg");
+//   background-position: center top;
+//   background-size: cover;
+
+//   h1 {
+//     padding: 40px 20px;
+//     font-size: 40px;
+//     text-align: center;
+//     color: white;
+//   }
+// }
+.slide-container {
+  display: flex;
+  justify-content: flex-start; /* Align content to the left */
+  align-items: center;
+  height: 100vh;
+  background: url('../../public/assets/slide.jpg') no-repeat center center/cover;
+  background-size: cover;
+  color: white;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.slide-text {
+  max-width: 600px;
+  text-align: left; /* Align text to the left */
+  z-index: 2;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column; /* Buttons will be stacked in a column */
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-login,
+.btn-signup {
+  background-color: #ff5a5f; /* Primary color */
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn-login:hover,
+.btn-signup:hover {
+  background-color: #f54b5a;
+  border: 2px solid #f54b5a;
+}
+
+.btn-login:focus,
+.btn-signup:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(245, 75, 90, 0.6);
+}
+
+@media (min-width: 768px) {
+  .slide-container {
+    padding: 0 50px;
+  }
+
+  .slide-text {
+    max-width: 700px;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .buttons-container {
+    flex-direction: row; /* Align buttons in a row for larger screens */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .slide-container {
+    padding: 0 15px;
+  }
+
+  .slide-text {
+    text-align: left; /* Keep text left-aligned on mobile */
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .buttons-container {
+    gap: 10px;
+  }
+
+  .btn-login,
+  .btn-signup {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}

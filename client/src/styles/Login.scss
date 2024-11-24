@@ -1,0 +1,235 @@
+// @import "./variables.scss";
+// @import "./breakpoints.scss";
+
+// .login {
+//   width: 100vw;
+//   height: 100vh;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+//   background: url("../../public/assets/login.jpg") center;
+//   background-size: cover;
+
+//   &_content {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 15px;
+//     width: 40%;
+//     padding: 40px;
+//     background-color: rgba(0, 0, 0, 0.8);
+//     border-radius: 20px;
+
+//     @include lg {
+//       width: 60%
+//     }
+
+//     @include mm {
+//       width: 80%
+//     }
+
+//     &_form {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       gap: 15px;
+
+//       input {
+//         width: 100%;
+//         padding: 7px 15px;
+//         background-color: transparent;
+//         border: none;
+//         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+//         outline: none;
+//         text-align: center;
+//         color: white;
+
+//         input:not(:placeholder-shown):focus {
+//           background: transparent; /* or background: none; */
+//         }
+
+//         &::placeholder {
+//           color: white;
+//         }
+//       }
+
+//       button {
+//         margin-top: 15px;
+
+//         @include buttonStyle;
+//         width: 50%;
+
+//         &:hover {
+//           box-shadow: 0 0 10px 3px rgba(255, 255, 255);
+//         }
+//       }
+//     }
+
+//     &_google {
+//       width: 100%;
+//       display: flex;
+//       justify-content: center;
+//       margin-top: 20px;
+//     }
+
+//     a {
+//       text-decoration: none;
+//       color: white;
+//       font-size: 17px;
+//       font-weight: 600;
+//       text-align: center;
+
+//       &:hover {
+//         text-decoration: underline;
+//       }
+//     }
+
+//     p {
+//       color: white;
+//       font-size: 13px;
+//       text-align: center;
+//     }
+//   }
+// }
+
+
+@import "./variables.scss";
+@import "./breakpoints.scss";
+
+.login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("../../public/assets/login.jpg") center no-repeat;
+  background-size: cover;
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 35%;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: slideIn 1s ease-out;
+
+    @include lg {
+      width: 55%;
+    }
+
+    @include mm {
+      width: 80%;
+    }
+
+    &_form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+      input {
+        width: 100%;
+        padding: 10px 15px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+        outline: none;
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        transition: border-color 0.3s, background-color 0.3s;
+
+        &:focus {
+          border-color: #ff6f61;
+        }
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.7);
+        }
+      }
+
+      button {
+        margin-top: 20px;
+        @include buttonStyle;
+        width: 60%;
+        transition: all 0.3s ease;
+
+        &:hover {
+          box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
+          transform: translateY(-2px);
+        }
+      }
+    }
+
+    &_google {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 25px;
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 15px;
+        background-color: #4285f4;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s;
+
+        &:hover {
+          background-color: #357ae8;
+          transform: scale(1.05);
+        }
+
+        img {
+          width: 20px;
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: center;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #ff6f61;
+        text-decoration: underline;
+      }
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
